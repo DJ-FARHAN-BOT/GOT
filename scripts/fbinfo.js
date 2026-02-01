@@ -37,7 +37,9 @@ module.exports = {
 🆔 UID: ${uid}
 👤 Username: ${user.vanity || "Not set"}
 🚻 Gender: ${gender}
-🔗 Profile: https://facebook.com/${uid}`
+🔗 Profile: https://facebook.com/${uid}
+
+🔵▄̽𓆩𝙍𝘼𝙁𝙄 ⚔︎ 𝗖꯭𝗵꯭𝗮꯭𝘁꯭ ⚔︎ 𝗕꯭𝗼꯭𝘁꯭ ⚔🔵`
       );
 
     } catch (err) {
