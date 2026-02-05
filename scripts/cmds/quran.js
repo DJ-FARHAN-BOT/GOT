@@ -1,181 +1,104 @@
 const axios = require("axios");
 
 const surahMap = {
-1: ["fatiha", "ফাতিহা"],
-2: ["baqarah", "বাকারাহ"],
-3: ["imran", "ইমরান"],
-4: ["nisa", "নিসা"],
-5: ["maidah", "মায়েদাহ"],
-6: ["anam", "আনআম"],
-7: ["araf", "আরাফ"],
-8: ["anfal", "আনফাল"],
-9: ["taubah", "তাওবাহ"],
-10: ["yunus", "ইউনুস"],
-11: ["hud", "হুদ"],
-12: ["yusuf", "ইউসুফ"],
-13: ["raad", "রাদ"],
-14: ["ibrahim", "ইব্রাহিম"],
-15: ["hijr", "হিজর"],
-16: ["nahl", "নাহল"],
-17: ["isra", "ইসরা"],
-18: ["kahf", "কাহফ"],
-19: ["maryam", "মারইয়াম"],
-20: ["taha", "ত্বা-হা"],
-21: ["anbiya", "আম্বিয়া"],
-22: ["hajj", "হজ"],
-23: ["muminoon", "মুমিনুন"],
-24: ["nur", "নূর"],
-25: ["furqan", "ফুরকান"],
-26: ["shuara", "শুআরা"],
-27: ["naml", "নামল"],
-28: ["qasas", "কাসাস"],
-29: ["ankabut", "আনকাবুত"],
-30: ["rum", "রূম"],
-31: ["luqman", "লোকমান"],
-32: ["sajda", "সাজদা"],
-33: ["ahzab", "আহজাব"],
-34: ["saba", "সাবা"],
-35: ["fatir", "ফাতির"],
-36: ["yasin", "ইয়াসিন"],
-37: ["saffat", "সাফফাত"],
-38: ["sad", "সা’দ"],
-39: ["zumar", "যুমার"],
-40: ["ghafir", "গাফির"],
-41: ["fussilat", "ফুসসিলাত"],
-42: ["shura", "শূরা"],
-43: ["zukhruf", "যুখরুফ"],
-44: ["dukhan", "দুখান"],
-45: ["jasiyah", "জাসিয়া"],
-46: ["ahqaf", "আহকাফ"],
-47: ["muhammad", "মুহাম্মাদ"],
-48: ["fath", "ফাতহ"],
-49: ["hujurat", "হুজুরাত"],
-50: ["qaf", "ক্বাফ"],
-51: ["dhariyat", "যারিয়াত"],
-52: ["tur", "ত্বূর"],
-53: ["najm", "নাজম"],
-54: ["qamar", "কামার"],
-55: ["rahman", "রহমান"],
-56: ["waqiah", "ওয়াকিয়া"],
-57: ["hadid", "হাদীদ"],
-58: ["mujadila", "মুজাদিলা"],
-59: ["hashr", "হাশর"],
-60: ["mumtahanah", "মুমতাহিনা"],
-61: ["saff", "সাফ"],
-62: ["jumuah", "জুমু’আ"],
-63: ["munafiqun", "মুনাফিকুন"],
-64: ["taghabun", "তাগাবুন"],
-65: ["talaq", "তালাক"],
-66: ["tahrim", "তাহরীম"],
-67: ["mulk", "মুলক"],
-68: ["qalam", "কলম"],
-69: ["haqqah", "হাক্বক্বাহ"],
-70: ["ma'arij", "মাআরিজ"],
-71: ["nuh", "নূহ"],
-72: ["jinn", "জ্বিন"],
-73: ["muzzammil", "মুযাম্মিল"],
-74: ["muddaththir", "মুদ্দাসসির"],
-75: ["qiyamah", "কিয়ামাহ"],
-76: ["insan", "ইনসান"],
-77: ["mursalat", "মুরসালাত"],
-78: ["naba", "নাবা’"],
-79: ["naziyat", "নাযিয়াত"],
-80: ["abasa", "আবাসা"],
-81: ["takwir", "তাকভির"],
-82: ["infitar", "ইনফিতার"],
-83: ["mutaffifin", "মুতাফফিফিন"],
-84: ["inshiqaq", "ইনশিক্বাক"],
-85: ["buruj", "বুরুজ"],
-86: ["tariq", "তারিক"],
-87: ["ala", "আ'লা"],
-88: ["ghashiyah", "গাশিয়াহ"],
-89: ["fajr", "ফজর"],
-90: ["balad", "বালাদ"],
-91: ["shams", "শামস"],
-92: ["layl", "লাইল"],
-93: ["duha", "দুহা"],
-94: ["sharh", "আল ইনশিরাহ"],
-95: ["tin", "তীন"],
-96: ["alaq", "আলাক"],
-97: ["qadr", "কদর"],
-98: ["bayyinah", "বাইয়্যিনাহ"],
-99: ["zilzal", "যিলযাল"],
-100: ["adiyat", "আদিয়াত"],
-101: ["qari'ah", "কারিয়াহ"],
-102: ["takathur", "তাকাসুর"],
-103: ["asr", "আসর"],
-104: ["humazah", "হুমাযাহ"],
-105: ["fil", "ফীল"],
-106: ["quraish", "কুরাইশ"],
-107: ["maun", "মাউন"],
-108: ["kawthar", "কাওসার"],
-109: ["kafirun", "কাফিরুন"],
-110: ["nasr", "নাসর"],
-111: ["masad", "লাহাব"],
-112: ["ikhlas", "ইখলাস"],
-113: ["falaq", "ফালাক"],
-114: ["nas", "নাস"]
-// 🛑 বাকিগুলো চাইলে এখানে যুক্ত করো
+    1: ["Fatiha", "ফাতিহা"], 2: ["Baqarah", "বাকারাহ"], 3: ["Imran", "ইমরান"], 4: ["Nisa", "নিসা"], 5: ["Maidah", "মায়েদাহ"],
+    6: ["Anam", "আনআম"], 7: ["Araf", "আরাফ"], 8: ["Anfal", "আনফাল"], 9: ["Taubah", "তাওবাহ"], 10: ["Yunus", "ইউনুস"],
+    11: ["Hud", "হুদ"], 12: ["Yusuf", "ইউসুফ"], 13: ["Raad", "রাদ"], 14: ["Ibrahim", "ইব্রাহিম"], 15: ["Hijr", "হিজর"],
+    16: ["Nahl", "নাহল"], 17: ["Isra", "ইসরা"], 18: ["Kahf", "কাহফ"], 19: ["Maryam", "মারইয়াম"], 20: ["Taha", "ত্বা-হা"],
+    21: ["Anbiya", "আম্বিয়া"], 22: ["Hajj", "হজ"], 23: ["Muminoon", "মুমিনুন"], 24: ["Nur", "নূর"], 25: ["Furqan", "ফুরকান"],
+    26: ["Shuara", "শুআরা"], 27: ["Naml", "নামল"], 28: ["Qasas", "কাসাস"], 29: ["Ankubut", "আনকাবুত"], 30: ["Rum", "রূম"],
+    31: ["Luqman", "লোকমান"], 32: ["Sajda", "সাজদা"], 33: ["Ahzab", "আহজাব"], 34: ["Saba", "সাবা"], 35: ["Fatir", "ফাতির"],
+    36: ["Yasin", "ইয়াসিন"], 37: ["Saffat", "সাফফাত"], 38: ["Sad", "সা’দ"], 39: ["Zumar", "যুমার"], 40: ["Ghafir", "গাফির"],
+    41: ["Fussilat", "ফুসসিলাত"], 42: ["Shura", "শূরা"], 43: ["Zukhruf", "যুখরুফ"], 44: ["Dukhan", "দুখান"], 45: ["Jasiyah", "জাসিয়া"],
+    46: ["Ahqaf", "আহকাফ"], 47: ["Muhammad", "মুহাম্মাদ"], 48: ["Fath", "ফাতহ"], 49: ["Hujurat", "হুজুরাত"], 50: ["Qaf", "ক্বাফ"],
+    51: ["Dhariyat", "যারিয়াত"], 52: ["Tur", "ত্বূর"], 53: ["Najm", "নাজম"], 54: ["Qamar", "কামার"], 55: ["Rahman", "রহমান"],
+    56: ["Waqiah", "ওয়াকিয়া"], 57: ["Hadid", "হাদীদ"], 58: ["Mujadilah", "মুজাদিলা"], 59: ["Hashr", "হাশর"], 60: ["Mumtahanah", "মুমতাহিনা"],
+    61: ["Saff", "সাফ"], 62: ["Jumuah", "জুমু’আ"], 63: ["Munafiqun", "মুনাফিকুন"], 64: ["Taghabun", "তাগাবুন"], 65: ["Talaq", "তালাক"],
+    66: ["Tahrim", "তাহরীম"], 67: ["Mulk", "মুলক"], 68: ["Qalam", "কলম"], 69: ["Haqqah", "হাক্বক্বাহ"], 70: ["Ma'arij", "মাআরিজ"],
+    71: ["Nuh", "নূহ"], 72: ["Jinn", "জ্বিন"], 73: ["Muzzammil", "মুযাম্মিল"], 74: ["Muddaththir", "মুদ্দাসসির"], 75: ["Qiyamah", "কিয়ামাহ"],
+    76: ["Insan", "ইনসান"], 77: ["Mursalat", "মুরসালাত"], 78: ["Naba", "নাবা’"], 79: ["Naziyat", "নাযিয়াত"], 80: ["Abasa", "আবাসা"],
+    81: ["Takwir", "তাকভির"], 82: ["Infitar", "ইনফিতার"], 83: ["Mutaffifin", "মুতাফফিফিন"], 84: ["Inshiqaq", "ইনশিক্বাক"], 85: ["Buruj", "বুরুজ"],
+    86: ["Tariq", "তারিক"], 87: ["Ala", "আ'লা"], 88: ["Ghashiyah", "গাশিয়াহ"], 89: ["Fajr", "ফজর"], 90: ["Balad", "বালাদ"],
+    91: ["Shams", "শামস"], 92: ["Layl", "লাইল"], 93: ["Duha", "দুহা"], 94: ["Sharh", "ইনশিরাহ"], 95: ["Tin", "তীন"],
+    96: ["Alaq", "আলাক"], 97: ["Qadr", "কদর"], 98: ["Bayyinah", "বাইয়্যিনাহ"], 99: ["Zilzal", "যিলযাল"], 100: ["Adiyat", "আদিয়াত"],
+    101: ["Qariah", "কারিয়াহ"], 102: ["Takathur", "তাকাসুর"], 103: ["Asr", "আসর"], 104: ["Humazah", "হুমাযাহ"], 105: ["Fil", "ফীল"],
+    106: ["Quraish", "কুরাইশ"], 107: ["Maun", "মাউন"], 108: ["Kawthar", "কাওসার"], 109: ["Kafirun", "কাফিরুন"], 110: ["Nasr", "নাসর"],
+    111: ["Masad", "লাহাব"], 112: ["Ikhlas", "ইখলাস"], 113: ["Falaq", "ফালাক"], 114: ["Nas", "নাস"]
 };
 
+// ড্রাইভ আইডিগুলো এখানে যোগ করুন
 const driveAudioIds = {
-1: "1QVxonQa7JBcBbuQQHWySwsp4wJpvDonG",
-3: "1QgawsTyDvdrrcDbtD57X13CKCIievFAD",
-112: "1hz3dKc3gyRSHkTz78VnEr-wkM7vCOTW2",
-114: "1rsm7ZmOnqSlUDHhZtFSBL6LM9uREnIdv"
-// 🛑 এখানেও Drive ID যোগ করো
+    1: "1QVxonQa7JBcBbuQQHWySwsp4wJpvDonG",
+    3: "1QgawsTyDvdrrcDbtD57X13CKCIievFAD",
+    112: "1hz3dKc3gyRSHkTz78VnEr-wkM7vCOTW2",
+    114: "1rsm7ZmOnqSlUDHhZtFSBL6LM9uREnIdv"
 };
 
 function getSurahNumber(input) {
-input = input.toLowerCase();
-if (!isNaN(input)) return parseInt(input);
-for (const [num, names] of Object.entries(surahMap)) {
-if (names.some(n => n.toLowerCase() === input)) return parseInt(num);
-}
-return null;
+    input = input.toLowerCase();
+    if (!isNaN(input)) return parseInt(input);
+    for (const [num, names] of Object.entries(surahMap)) {
+        if (names.some(n => n.toLowerCase() === input)) return parseInt(num);
+    }
+    return null;
 }
 
 module.exports = {
-config: {
-name: "quran",
-version: "3.0",
-author: "ChatGPT + You",
-role: 0,
-shortDescription: "📖 কুরআন পড়ুন ও শুনুন (অডিও সহ)",
-category: "islam",
-guide: {
-en: "/quran list\n/quran [name|number]\n/quran [name|number] audio"
-}
-},
+    config: {
+        name: "quran",
+        version: "3.5",
+        author: "milon",
+        role: 0,
+        shortDescription: "📖 কুরআন পড়ুন ও শুনুন",
+        category: "islam",
+        guide: {
+            en: "/quran list\n/quran [নাম|নম্বর]\n/quran [নাম|নম্বর] audio"
+        }
+    },
 
-onStart: async function ({ api, args, message, event }) {
-if (!args[0]) {
-return message.reply("🕌 উদাহরণ:\n/quran list\n/quran ফাতিহা\n/quran 112\n/quran 1 audio");
-}
+    onStart: async function ({ api, args, message, event }) {
+        if (!args[0]) {
+            return message.reply("🕌 উদাহরণ:\n/quran list\n/quran ফাতিহা\n/quran 112\n/quran 1 audio");
+        }
 
-const input = args[0].toLowerCase();
-const type = args[1]?.toLowerCase();
+        const input = args[0].toLowerCase();
+        const type = args[1]?.toLowerCase();
 
-// 📘 সূরা তালিকা
-if (input === "list") {
-let listText = "📖 ১১৪ সূরা:\n\n";
-for (let i = 1; i <= 114; i++) {
-if (surahMap[i]) {
-listText += `${i}. ${surahMap[i][0]} (${surahMap[i][1]})\n`;
-}
-}
-return message.reply(listText);
-}
+        if (input === "list") {
+            let listText = "📖 ১১৪ সূরার তালিকা:\n\n";
+            for (let i = 1; i <= 114; i++) {
+                if (surahMap[i]) {
+                    listText += `${i}. ${surahMap[i][1]} (${surahMap[i][0]})\n`;
+                }
+            }
+            return message.reply(listText);
+        }
 
-// ⛓️ সূরা নাম্বার বের করো
-const surahNum = getSurahNumber(input);
-if (!surahNum || surahNum < 1 || surahNum > 114) {
-return message.reply("❌ সঠিক সূরা নাম বা নম্বর দিন (1-114)।");
-}
+        const surahNum = getSurahNumber(input);
+        if (!surahNum || surahNum < 1 || surahNum > 114) {
+            return message.reply("❌ সঠিক সূরার নাম বা নম্বর দিন (১-১১৪)।");
+        }
 
-// 🔊 অডিও
-if (type === "audio") {
-const fileId = driveAudioIds[surahNum];
-if (!fileId) return message.reply("❌ এই সূরার অডিও এখনো যুক্ত হয়নি।");
+        const surahName = surahMap[surahNum][1];
 
-const audioUrl = `https://docs.google.com/uc?export=download&i
+        if (type === "audio") {
+            const fileId = driveAudioIds[surahNum];
+            if (!fileId) return message.reply(`❌ সূরা "${surahName}" এর অডিও এখনো সার্ভারে যুক্ত করা হয়নি।`);
+
+            const audioUrl = `https://docs.google.com/uc?export=download&id=${fileId}`;
+            
+            try {
+                // অডিও পাঠানোর জন্য স্ট্রিম ব্যবহার (বট অনুযায়ী এটি পরিবর্তন হতে পারে)
+                const stream = (await axios.get(audioUrl, { responseType: "stream" })).data;
+                return message.reply({
+                    body: `🔊 সূরা ${surahName} (অডিও)`,
+                    attachment: stream
+                });
+            } catch (err) {
+                return message.reply("❌ অডিও ফাইলটি পাঠাতে সমস্যা হচ্ছে।");
+            }
+        } else {
+            return message.reply(`📖 সূরা ${surahName} (নম্বর: ${surahNum})\n\nঅডিও শুনতে লিখুন: /quran ${surahNum} audio`);
+        }
+    }
+};
