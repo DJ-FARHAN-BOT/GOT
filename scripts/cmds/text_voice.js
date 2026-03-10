@@ -6,7 +6,7 @@ module.exports = {
 config: {
 name: "text_voice",
 version: "1.0.5",
-author: "Milon",
+author: "Farhan",
 countDown: 1, // সময় কমিয়ে ১ সেকেন্ড করা হলো
 role: 0,
 shortDescription: "Ultra Fast Voice Reply",
@@ -23,10 +23,14 @@ const input = event.body.toLowerCase().trim();
 
 // --- কি-ওয়ার্ড এবং লিংক ---
 const voiceMap = {
-"i love you": "https://files.catbox.moe/npy7kl.mp3",
+"@ヽ｟ᏟᎬϴ｠▁▁ዐዐዐ 🙁😚☺️👿": "https://files.catbox.moe/cmnen1.mp4",
 "হাই হালে": "এখানে_লিং",
 "dirim": "https://files.catbox.moe/1rk48q.mp4",
-"👨‍🚒👨‍🚒": "https://files.catbox.moe/npy7kl.mp3"
+"@〲Dʌʀĸ᭄ ヾ ꜛxʌɪĸoꜛッ༒": "https://files.catbox.moe/cmnen1.mp4"
+"Farhan": "https://files.catbox.moe/cmnen1.mp4"
+"farhan": "https://files.catbox.moe/cmnen1.mp4"
+"FARHAN": "https://files.catbox.moe/cmnen1.mp4"
+"ফারহান":  "https://files.catbox.moe/cmnen1.mp4"
 };
 
 if (voiceMap[input]) {
